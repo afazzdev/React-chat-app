@@ -1,0 +1,12 @@
+@import "./registerpage";
+@import "./autenticationpage";
+@import "./landingpage";
+@import "./landingpage/navslant";
+@import "./landingpage/page1";
+@import "./landingpage/page2";
+@import "./landingpage/page3";
+@import "./landingpage/page4";
+@import "../../components/Auth/InputField/TextField.scss";
+* {
+  font-family: "Open Sans", "Montserrat", "Roboto", sans-serif;
+}
