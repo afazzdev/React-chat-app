@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Logo from "./logo";
+// import Logo from "./logo";
 
 const Navbar = () => {
   const navQuery = () => {
@@ -33,7 +33,7 @@ const Navbar = () => {
         <div></div>
         <div className="navslant-btn" onClick={navQuery}>
           <i className="fa fa-bars"></i>
-          <Logo />
+          {/* <Logo /> */}
         </div>
         <div className="navslant-menu">
           <ul>
