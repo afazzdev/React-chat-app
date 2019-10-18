@@ -1,20 +1,26 @@
 @import "./styles/scaffoldings";
 
-@import "./containers/MainWindow/MainWindow.scss";
-@import "./containers/Sidebar/Sidebar.scss";
+@import "./containers/MainWindow/MainWindow";
+@import "./containers/Sidebar/Sidebar";
 
-@import "./components/Badge/Badge.scss";
-@import "./components/Button/Button.scss";
-@import "./components/Contact/Contact.scss";
-@import "./components/ContactWindow/ContactWindow.scss";
-@import "./components/Input/Input.scss";
-@import "./components/InputWindow/InputWindow.scss";
-@import "./components/MessageBox/MessageBox.scss";
-@import "./components/MessageWindow/MessageWindow.scss";
-@import "./components/WindowTopBar/WindowTopBar.scss";
-@import "./components/TabMenu/Tabmenu.scss";
-@import "./styles/HomePage/index.scss";
+@import "./components/Badge/Badge";
+@import "./components/Button/Button";
+@import "./components/Contact/Contact";
+@import "./components/ContactWindow/ContactWindow";
+@import "./components/Input/Input";
+@import "./components/InputWindow/InputWindow";
+@import "./components/MessageBox/MessageBox";
+@import "./components/MessageWindow/MessageWindow";
+@import "./components/WindowTopBar/WindowTopBar";
+@import "./components/TabMenu/Tabmenu";
+@import "./styles/HomePage/index";
 
+// @import "./styles/scaffoldings";
+
+// @import "./containers/MainWindow/MainWindow";
+// @import "./containers/Sidebar/Sidebar";
+// @import "./components/Badge/Badge";
+// @import "./components"
 .app {
   width: $baseline * 55;
   height: 95%;
