@@ -30,11 +30,7 @@ const Navbar = () => {
   return (
     <>
       <nav className="navslant">
-        <div>
-          <Link to="/">
-            <Logo />
-          </Link>
-        </div>
+        <div></div>
         <div className="navslant-btn" onClick={navQuery}>
           <i className="fa fa-bars"></i>
         </div>

@@ -780,31 +780,6 @@ body {
   z-index: 10000;
 }
 
-.navslant .navslant-logo {
-  position: fixed;
-  z-index: 100000;
-  top: 40px;
-  left: 100px;
-  stroke: #fff;
-}
-
-.navslant .navslant-logo path:nth-child(1) {
-  stroke-dasharray: 30;
-  stroke-dashoffset: 2;
-}
-
-.navslant .navslant-logo path:nth-child(2) {
-  stroke-dasharray: 100;
-}
-
-.navslant .navslant-logo path:nth-child(3) {
-  stroke-dasharray: 100;
-}
-
-.navslant .navslant-logo path:nth-child(4) {
-  stroke-dasharray: 100;
-}
-
 .navslant .navslant-btn {
   will-change: transform;
   display: -webkit-box;
