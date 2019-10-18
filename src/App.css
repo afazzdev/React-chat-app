@@ -831,7 +831,6 @@ body {
           transform: skewX(-8deg);
   -webkit-transform-origin: top left;
           transform-origin: top left;
-  position: fixed;
   right: 120px;
   top: 120px;
   width: 400px;
@@ -873,6 +872,10 @@ body {
 .navslant .navslant-menu.active {
   -webkit-transform: skewX(8deg) translate(0, 0);
           transform: skewX(8deg) translate(0, 0);
+}
+
+.navslant .navslant-menu.active ul {
+  position: fixed;
 }
 
 .navslant .navslant-menu.active ul li {

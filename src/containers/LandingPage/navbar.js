@@ -33,6 +33,7 @@ const Navbar = () => {
         <div></div>
         <div className="navslant-btn" onClick={navQuery}>
           <i className="fa fa-bars"></i>
+          <Logo />
         </div>
         <div className="navslant-menu">
           <ul>

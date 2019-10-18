@@ -1,3 +1,5 @@
+// never forget to activate "watch sass"
+
 .navslant {
   position: relative;
   z-index: 10000;
@@ -40,7 +42,7 @@
     ul {
       transform: skewX(-8deg);
       transform-origin: top left;
-      position: fixed;
+      // position: fixed;
       right: 120px;
       top: 120px;
       width: 400px;
@@ -78,6 +80,7 @@
     // box-shadow: -5px 0px 10px rgba(133, 133, 133, 0.699);
 
     ul {
+      position: fixed;
       li {
         opacity: 1;
         transform: translate((0, 0));
@@ -109,6 +112,7 @@
     }
     .navslant-menu {
       width: 80%;
+      // position: relative;
       ul {
         right: 40px;
       }
