@@ -814,8 +814,8 @@ body {
   position: fixed;
   top: 0;
   right: 0;
-  width: 50%;
-  background: #fff;
+  width: 400px;
+  background: #ebebeb;
   height: 100%;
   -webkit-transform: skewX(0deg) translate(100%, 0);
           transform: skewX(0deg) translate(100%, 0);
@@ -860,7 +860,7 @@ body {
 }
 
 .navslant .navslant-btn.active {
-  background: #fff;
+  background: #ebebeb;
 }
 
 .navslant .navslant-btn.active .fa {
@@ -889,7 +889,7 @@ body {
 }
 
 .navslant .navslant-menu.active ul li a {
-  color: #000;
+  color: #2f3760;
 }
 
 .navslant .navslant-menu.active ul li:nth-child(1) {
@@ -1048,7 +1048,7 @@ body {
   background: #2f3760;
   -webkit-box-shadow: 4px 4px 10px #d2d2d2;
           box-shadow: 4px 4px 10px #d2d2d2;
-  height: 23rem;
+  height: 50vh;
   display: -ms-grid;
   display: grid;
   place-items: flex-end flex-start;
