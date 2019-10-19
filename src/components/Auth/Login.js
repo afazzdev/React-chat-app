@@ -13,7 +13,9 @@ class LoginPage extends React.Component {
       access_token: "",
       errors: "",
       isLoading: false,
-      empty: ""
+      empty: "",
+      type: "password",
+      hidden: "fa-eye-slash"
     };
   }
 
@@ -50,6 +52,15 @@ class LoginPage extends React.Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
+  onHide = e => {
+    e.preventDefault();
+    if (this.state.type === "password") {
+      this.setState({ hidden: "fa-eye", type: "text" });
+    } else {
+      this.setState({ hidden: "fa-eye-slash", type: "password" });
+    }
+  };
+
   render() {
     const { isLoading } = this.state;
     return (
@@ -75,14 +86,17 @@ class LoginPage extends React.Component {
             />
             <TextField
               label="Password"
-              type="password"
+              type={this.state.type}
               field="password"
               className="input-text"
               onChange={this.onChange}
               errors={this.state.errors}
               empty={this.state.empty}
               placeholder="Type your password here"
+              onHide={this.onHide}
+              hidden={this.state.hidden}
             />
+
             <div className="input-group">
               <button
                 disabled={isLoading}

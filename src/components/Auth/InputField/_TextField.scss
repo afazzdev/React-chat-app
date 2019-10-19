@@ -22,12 +22,13 @@
     }
   }
   .input-button {
-    background: transparent;
+    background: #2f3760;
     color: #ebebeb;
     border: none;
     padding: 5px 10px;
     border-radius: 5px;
     transition: background ease-in-out 0.2s;
+    outline: none;
     &:hover {
       background: #ebebeb;
       color: #2f3760;
@@ -36,5 +37,11 @@
   }
   .input-error {
     color: red;
+  }
+  .hidden-button {
+    position: absolute;
+    transform: translate(-50%, 5px);
+    height: 2rem;
+    border-radius: 0 5px 5px 0;
   }
 }

@@ -16,7 +16,9 @@ class RegisterPage extends Component {
       // passwordConfirmation: "",
       errors: "",
       isLoading: false,
-      wrong: false
+      wrong: false,
+      type: "password",
+      hidden: "fa-eye-slash"
     };
   }
 
@@ -52,6 +54,15 @@ class RegisterPage extends Component {
           errors: err
         });
       });
+  };
+
+  onHide = e => {
+    e.preventDefault();
+    if (this.state.type === "password") {
+      this.setState({ hidden: "fa-eye", type: "text" });
+    } else {
+      this.setState({ hidden: "fa-eye-slash", type: "password" });
+    }
   };
 
   render() {
@@ -90,13 +101,15 @@ class RegisterPage extends Component {
             />
             <TextField
               label="Password"
-              type="password"
+              type={this.state.type}
               field="password"
               className="input-text"
               errors={this.state.errors}
               empty={this.state.empty}
               onChange={this.onChange}
               placeholder="Type your password here"
+              onHide={this.onHide}
+              hidden={this.state.hidden}
             />
             <div className="input-group">
               <button

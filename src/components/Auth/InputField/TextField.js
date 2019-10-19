@@ -11,20 +11,29 @@ const TextField = ({
   errors,
   className,
   empty,
-  placeholder
+  placeholder,
+  onHide,
+  hidden
 }) => {
   return (
     <div className="input-group">
       <label className="input-label">{label}</label>
-      <input
-        type={type}
-        name={field}
-        className={className}
-        onChange={onChange}
-        pattern={pattern}
-        title={title}
-        placeholder={placeholder}
-      />
+      <div>
+        <input
+          type={type}
+          name={field}
+          className={className}
+          onChange={onChange}
+          pattern={pattern}
+          title={title}
+          placeholder={placeholder}
+        />
+        {onHide && (
+          <button onClick={onHide} className="input-button hidden-button">
+            <i className={`fas ${hidden}`}></i>
+          </button>
+        )}
+      </div>
       {errors && <span className="input-error">Error</span>}
       {empty && <span className="input-error">{empty}</span>}
     </div>

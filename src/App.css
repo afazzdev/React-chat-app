@@ -1200,13 +1200,14 @@ body {
 }
 
 .input-group .input-button {
-  background: transparent;
+  background: #2f3760;
   color: #ebebeb;
   border: none;
   padding: 5px 10px;
   border-radius: 5px;
   -webkit-transition: background ease-in-out 0.2s;
   transition: background ease-in-out 0.2s;
+  outline: none;
 }
 
 .input-group .input-button:hover {
@@ -1217,6 +1218,14 @@ body {
 
 .input-group .input-error {
   color: red;
+}
+
+.input-group .hidden-button {
+  position: absolute;
+  -webkit-transform: translate(-50%, 5px);
+          transform: translate(-50%, 5px);
+  height: 2rem;
+  border-radius: 0 5px 5px 0;
 }
 
 * {
