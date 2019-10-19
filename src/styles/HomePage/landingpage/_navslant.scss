@@ -14,7 +14,7 @@
     position: fixed;
     z-index: 100000;
     top: 40px;
-    right: 100px;
+    right: 40px;
     background: transparent;
     cursor: pointer;
     // background: #1d1d1d;
@@ -40,7 +40,7 @@
     transition: all 0.2s ease-in;
     z-index: -1;
     ul {
-      transform: skewX(-8deg);
+      // transform: skewX(-8deg);
       transform-origin: top left;
       // position: fixed;
       right: 120px;
@@ -77,10 +77,13 @@
   }
   .navslant-menu.active {
     transform: skewX(8deg) translate(0, 0);
+
     // box-shadow: -5px 0px 10px rgba(133, 133, 133, 0.699);
 
     ul {
       position: fixed;
+      transform: skewX(-8deg);
+      right: 60px;
       li {
         opacity: 1;
         transform: translate((0, 0));

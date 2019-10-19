@@ -796,7 +796,7 @@ body {
   position: fixed;
   z-index: 100000;
   top: 40px;
-  right: 100px;
+  right: 40px;
   background: transparent;
   cursor: pointer;
   border-radius: 3px;
@@ -827,8 +827,6 @@ body {
 }
 
 .navslant .navslant-menu ul {
-  -webkit-transform: skewX(-8deg);
-          transform: skewX(-8deg);
   -webkit-transform-origin: top left;
           transform-origin: top left;
   right: 120px;
@@ -876,6 +874,9 @@ body {
 
 .navslant .navslant-menu.active ul {
   position: fixed;
+  -webkit-transform: skewX(-8deg);
+          transform: skewX(-8deg);
+  right: 60px;
 }
 
 .navslant .navslant-menu.active ul li {
@@ -1052,6 +1053,27 @@ body {
   padding: 2rem;
   width: calc(100vw - 15rem);
   position: relative;
+  /* Optional: show position indicator in red */
+}
+
+.page4 .dev-cards::-webkit-scrollbar-track {
+  border: none;
+  background: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.page4 .dev-cards::-webkit-scrollbar {
+  width: 0px;
+  /* Remove scrollbar space */
+  background: transparent;
+  /* Optional: just make scrollbar invisible */
+}
+
+.page4 .dev-cards::-webkit-scrollbar-thumb {
+  background: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .page4 .dev-cards .dev-card {
