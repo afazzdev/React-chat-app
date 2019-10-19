@@ -1,5 +1,6 @@
 .containerland {
   background-color: #fff;
+  font-family: "Poppins", sans-serif;
   .containerpage {
     width: 100vw;
     width: 100%;
@@ -26,20 +27,25 @@
       position: relative;
       margin-bottom: -10vw;
       background: #2f3760;
+      filter: drop-shadow(0px 9px 6px rgba(136, 136, 136, 0.5));
       z-index: 9;
     }
     &:nth-child(4) {
+      height: calc(300px + 60vh);
       background: #d2d2d2;
       clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10vw), 0 100%);
       position: relative;
       margin-bottom: -10vw;
       z-index: 8;
+      filter: drop-shadow(0px 9px 6px rgba(255, 255, 255, 0.5));
       overflow: hidden;
     }
   }
   .footer {
-    height: 50vh;
+    height: 200px;
     background: #1d1d1d;
+    display: grid;
+    place-items: flex-end center;
   }
 }
 

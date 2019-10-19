@@ -37,7 +37,7 @@ class RegisterPage extends Component {
     };
 
     axios
-      .post("https://priores.serveo.net/api/register", dataInput)
+      .post("https://arcane-dawn-61247.herokuapp.com/api/register", dataInput)
       .then(res => {
         this.setState({
           username: "",

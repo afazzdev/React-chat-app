@@ -23,7 +23,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid #ebebeb;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   -webkit-box-shadow: 0 -8px 15px 5px #cecece;
@@ -39,7 +39,7 @@ body {
   bottom: 60px;
   padding: 12px 0;
   overflow: auto;
-  background: #f4f4f4;
+  background: #d2d2d2;
 }
 
 .main-window__input-window {
@@ -48,7 +48,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  border-top: 1px solid #f0f0f0;
+  border-top: 1px solid #ebebeb;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -60,7 +60,7 @@ body {
   height: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background: #3597C8;
+  background: #2f3760;
   color: #fff;
   z-index: 2;
 }
@@ -80,7 +80,7 @@ body {
   font-size: 9.6px;
   text-align: center;
   background: #fafafa;
-  border: 1px solid #e3e3e3;
+  border: 1px solid #dedede;
   min-width: 10px;
   border-radius: 50px;
 }
@@ -162,7 +162,7 @@ body {
 }
 
 .contact:hover, .contact--active {
-  background: #3088b4;
+  background: #272d4f;
 }
 
 .contact__image {
@@ -189,14 +189,14 @@ body {
 
 .contact__meta {
   display: block;
-  color: #add5e9;
+  color: #6f7bb9;
   font-size: 11.52px;
 }
 
 .contact__date {
   float: right;
   margin-left: 4.8px;
-  color: #84c1df;
+  color: #515ea4;
   font-size: 11.52px;
 }
 
@@ -240,7 +240,7 @@ body {
   height: 100%;
   width: 20%;
   float: left;
-  border-left: 1px solid #f0f0f0;
+  border-left: 1px solid #ebebeb;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -331,12 +331,12 @@ body {
 }
 
 .message-box__option--danger {
-  color: #CB4D5C;
-  border: 1px solid #CB4D5C;
+  color: #cb4d5c;
+  border: 1px solid #cb4d5c;
 }
 
 .message-box__option--danger:hover {
-  background: #CB4D5C;
+  background: #cb4d5c;
   color: #fff;
 }
 
@@ -375,7 +375,7 @@ body {
 
 .message-box--from-me .message-box__option--danger:hover {
   background: #fff;
-  color: #CB4D5C;
+  color: #cb4d5c;
 }
 
 .message-window {
@@ -413,7 +413,7 @@ body {
 .tab-menu {
   width: 100%;
   height: 100%;
-  background: #3597C8;
+  background: #2f3760;
   color: #fff;
 }
 
@@ -429,7 +429,7 @@ body {
 }
 
 .tab-menu__item:hover {
-  background: #25698c;
+  background: #161a2d;
 }
 
 .tab-menu__item--active {
@@ -552,6 +552,10 @@ body {
 
 .backgroundpage .container-slanted .chat-brand .greetings div:nth-child(2) {
   font-size: 1.8em;
+}
+
+.backgroundpage .container-slanted .chat-brand .greetings div.bonds {
+  font-size: 2.1em;
 }
 
 .backgroundpage .container-slanted .chat-brand .greetings div svg.navslant-logo {
@@ -703,6 +707,7 @@ body {
 
 .containerland {
   background-color: #fff;
+  font-family: "Poppins", sans-serif;
 }
 
 .containerland .containerpage {
@@ -739,22 +744,30 @@ body {
   position: relative;
   margin-bottom: -10vw;
   background: #2f3760;
+  -webkit-filter: drop-shadow(0px 9px 6px rgba(136, 136, 136, 0.5));
+          filter: drop-shadow(0px 9px 6px rgba(136, 136, 136, 0.5));
   z-index: 9;
 }
 
 .containerland .containerpage:nth-child(4) {
+  height: calc(300px + 60vh);
   background: #d2d2d2;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10vw), 0 100%);
           clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10vw), 0 100%);
   position: relative;
   margin-bottom: -10vw;
   z-index: 8;
+  -webkit-filter: drop-shadow(0px 9px 6px rgba(255, 255, 255, 0.5));
+          filter: drop-shadow(0px 9px 6px rgba(255, 255, 255, 0.5));
   overflow: hidden;
 }
 
 .containerland .footer {
-  height: 50vh;
+  height: 200px;
   background: #1d1d1d;
+  display: -ms-grid;
+  display: grid;
+  place-items: flex-end center;
 }
 
 ::-webkit-scrollbar {
@@ -1025,13 +1038,25 @@ body {
 }
 
 .page2 {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
   width: 100%;
   height: 100%;
   background: #d2d2d2;
-  position: relative;
+  position: absolute;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10vw), 0 100%);
           clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10vw), 0 100%);
   z-index: 10000;
+}
+
+.page2 .screenshoot {
+  width: 500px;
+}
+
+.page2 .screenshoot defs image {
+  width: 100%;
+  height: 100%;
 }
 
 .page4 {
@@ -1226,6 +1251,16 @@ body {
           transform: translate(-50%, 5px);
   height: 2rem;
   border-radius: 0 5px 5px 0;
+}
+
+.Footer {
+  display: -ms-grid;
+  display: grid;
+  place-items: flex-end;
+}
+
+.Footer span {
+  font-family: "Poppins", sans-serif;
 }
 
 * {

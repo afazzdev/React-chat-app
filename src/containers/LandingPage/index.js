@@ -4,6 +4,7 @@ import Page2 from "./page2";
 import withNav from "./withNavbar";
 import Page4 from "./page4";
 import Page3 from "./page3";
+import Footer from "../../components/Footer";
 
 class LandingPage extends React.Component {
   render() {
@@ -22,7 +23,9 @@ class LandingPage extends React.Component {
           <div className="containerpage empat">
             <Page4 />
           </div>
-          <div className="containerpage footer">footer</div>
+          <div className="containerpage footer">
+            <Footer />
+          </div>
         </div>
       </>
     );

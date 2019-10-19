@@ -18,8 +18,8 @@ class MasukPage extends React.Component {
             </div>
             <div className="chat-brand">
               <div className="greetings">
-                <div>Create new</div>
-                <div>relations with</div>
+                <div>Strengthen</div>
+                <div className="bonds">bonds with</div>
                 <div>
                   <Logo />
                 </div>

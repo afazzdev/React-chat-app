@@ -27,13 +27,13 @@ class LoginPage extends React.Component {
       password: this.state.password
     };
     this.setState({ errors: {}, isLoading: true });
-    const { phone, password } = this.state;
+
     if (!e.target.value) {
       this.setState({ empty: "cannot be empty" });
     }
-    Axios.post("https://ista.serveo.net/api/login", login)
+    Axios.post("https://arcane-dawn-61247.herokuapp.com/api/login", login)
       .then(res => {
-        localStorage.setItem("access_token", res.data.access_token);
+        localStorage.setItem("token", res.data.token);
         this.setState({
           access_token: res.data.access_token,
           token: res.data.token,
