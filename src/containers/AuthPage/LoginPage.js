@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import LoginPage from "../../components/Auth/Login";
 import Logo from "../LandingPage/logo";
@@ -12,7 +11,7 @@ class MasukPage extends React.Component {
         <div className="backgroundpage">
           <div className="container-slanted">
             <div className="autentication-form">
-              <div class="card" style={{ width: "18rem" }}>
+              <div className="card" style={{ width: "18rem" }}>
                 <LoginPage />
               </div>
             </div>
@@ -31,9 +30,5 @@ class MasukPage extends React.Component {
     );
   }
 }
-
-MasukPage.propTypes = {
-  userLoginRequest: PropTypes.func.isRequired
-};
 
 export default withNav(MasukPage);

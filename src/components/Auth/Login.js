@@ -8,7 +8,7 @@ class LoginPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      phone: "",
+      username: "",
       password: "",
       access_token: "",
       errors: "",
@@ -23,15 +23,18 @@ class LoginPage extends React.Component {
     e.preventDefault();
 
     const login = {
-      phone: this.state.phone,
+      username: this.state.username,
       password: this.state.password
     };
     this.setState({ errors: {}, isLoading: true });
-
+    console.log(login);
     if (!e.target.value) {
       this.setState({ empty: "cannot be empty" });
     }
-    Axios.post("https://arcane-dawn-61247.herokuapp.com/api/login", login)
+    Axios.post(
+      "https://penjualanapp-api.herokuapp.com/api/v1/auth/login",
+      login
+    )
       .then(res => {
         localStorage.setItem("token", res.data.token);
         this.setState({
@@ -77,12 +80,12 @@ class LoginPage extends React.Component {
             <TextField
               label="Phone"
               type="text"
-              field="phone"
+              field="username"
               className="input-text"
               onChange={this.onChange}
               errors={this.state.errors}
               empty={this.state.empty}
-              placeholder="Type your phone here"
+              placeholder="Type your username here"
             />
             <TextField
               label="Password"

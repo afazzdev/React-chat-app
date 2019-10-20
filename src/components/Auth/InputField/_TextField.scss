@@ -1,7 +1,8 @@
 .input-group {
-  margin: 5px;
+  margin: 10px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   .input-label {
     color: #ebebeb;
   }
@@ -14,12 +15,16 @@
     padding: 0 4px;
     color: #2f3760;
     transition: background ease 0.2s;
-    margin-top: 5px;
+    margin: 5px;
     &:focus,
     &:hover,
     &:not(:placeholder-shown) {
       background: #ebebeb;
     }
+  }
+  textarea.input-text {
+    height: 5rem;
+    width: 100%;
   }
   .input-button {
     background: #2f3760;
@@ -27,6 +32,7 @@
     border: none;
     padding: 5px 10px;
     border-radius: 5px;
+    margin: 5px;
     transition: background ease-in-out 0.2s;
     outline: none;
     &:hover {
@@ -40,7 +46,7 @@
   }
   .hidden-button {
     position: absolute;
-    transform: translate(-50%, 5px);
+    transform: translate(-50%, 0px);
     height: 2rem;
     border-radius: 0 5px 5px 0;
   }

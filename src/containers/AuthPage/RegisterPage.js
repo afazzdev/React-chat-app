@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import RegisterPage from "../../components/Auth/Register";
 import Logo from "../LandingPage/logo";
@@ -31,9 +30,5 @@ class SignupPage extends React.Component {
     );
   }
 }
-
-SignupPage.propTypes = {
-  userSignupRequest: PropTypes.func.isRequired
-};
 
 export default withNav(SignupPage);
