@@ -974,8 +974,16 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.page1 .h1 div:nth-child(1) {
+  font-size: 0.98em;
+}
+
 .page1 .h1 div:nth-child(2) {
   font-size: 1.2em;
+}
+
+.page1 .h1 div:nth-child(3) {
+  font-size: 1.02em;
 }
 
 .page1 .h1 div svg.navslant-logo {

@@ -23,8 +23,14 @@
 
     div {
       font-family: "Poppins", sans-serif;
+      &:nth-child(1) {
+        font-size: 0.98em;
+      }
       &:nth-child(2) {
         font-size: 1.2em;
+      }
+      &:nth-child(3) {
+        font-size: 1.02em;
       }
 
       svg.navslant-logo {
