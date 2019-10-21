@@ -33,7 +33,7 @@ const Page2 = () => {
                 // onPointerOut={handlePointerOut}
                 className="input-button"
               >
-                Web
+                <i className="fas fa-desktop"></i> Web
               </button>
             </Link>
             <Link to="/">
@@ -43,7 +43,7 @@ const Page2 = () => {
                 // onPointerOut={handlePointerOut}
                 className="input-button"
               >
-                Phone
+                <i className="fas fa-mobile"></i> Phone
               </button>
             </Link>
           </span>
