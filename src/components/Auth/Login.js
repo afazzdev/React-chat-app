@@ -1,14 +1,16 @@
 import React from "react";
 import TextField from "./InputField/TextField";
 import Axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import SigningIn from "../../containers/LandingPage/signingin";
+
+// import Auth from "./Auth";
 
 class LoginPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
+      phone: "",
       password: "",
       access_token: "",
       errors: "",
@@ -23,7 +25,7 @@ class LoginPage extends React.Component {
     e.preventDefault();
 
     const login = {
-      username: this.state.username,
+      phone: this.state.phone,
       password: this.state.password
     };
     this.setState({ errors: {}, isLoading: true });
@@ -31,18 +33,15 @@ class LoginPage extends React.Component {
     if (!e.target.value) {
       this.setState({ empty: "cannot be empty" });
     }
-    Axios.post(
-      "https://penjualanapp-api.herokuapp.com/api/v1/auth/login",
-      login
-    )
+    Axios.post("https://rocky-sierra-75836.herokuapp.com/api/login", login)
       .then(res => {
-        localStorage.setItem("token", res.data.token);
+        localStorage.setItem("token", res.data.access_token);
         this.setState({
           access_token: res.data.access_token,
-          token: res.data.token,
           redirect: true,
           isLoading: false
         });
+        this.props.history.push("/dashboard");
         console.log(res);
       })
       .catch(err => {
@@ -66,6 +65,7 @@ class LoginPage extends React.Component {
 
   render() {
     const { isLoading } = this.state;
+
     return (
       <>
         {isLoading ? (
@@ -80,12 +80,12 @@ class LoginPage extends React.Component {
             <TextField
               label="Phone"
               type="text"
-              field="username"
+              field="phone"
               className="input-text"
               onChange={this.onChange}
               errors={this.state.errors}
               empty={this.state.empty}
-              placeholder="Type your username here"
+              placeholder="Type your phone here"
             />
             <TextField
               label="Password"
@@ -119,4 +119,4 @@ class LoginPage extends React.Component {
   }
 }
 
-export default LoginPage;
+export default withRouter(LoginPage);

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 // import { isEmpty } from "lodash";
 import TextField from "./InputField/TextField";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import CreatingNewAccount from "../../containers/LandingPage/creatingNewAccount";
 
 class RegisterPage extends Component {
@@ -37,7 +37,7 @@ class RegisterPage extends Component {
     };
 
     axios
-      .post("https://arcane-dawn-61247.herokuapp.com/api/register", dataInput)
+      .post("https://rocky-sierra-75836.herokuapp.com/api/register", dataInput)
       .then(res => {
         this.setState({
           username: "",
@@ -45,6 +45,7 @@ class RegisterPage extends Component {
           phone: "",
           isLoading: false
         });
+        this.props.history.push("/login");
         console.log(res);
       })
       .catch(err => {
@@ -134,4 +135,4 @@ RegisterPage.propTypes = {
   userSignupRequest: PropTypes.func.isRequired
 };
 
-export default RegisterPage;
+export default withRouter(RegisterPage);

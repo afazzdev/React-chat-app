@@ -6,6 +6,8 @@ import LandingPage from "../containers/LandingPage";
 import RegisterPage from "../containers/AuthPage/RegisterPage";
 import LoginPage from "../containers/AuthPage/LoginPage";
 
+import isAuth from "../components/Auth/InputField/isAuth";
+
 const Routes = () => {
   const notFound = () => {
     return (
@@ -20,9 +22,9 @@ const Routes = () => {
       <Router>
         <Switch>
           <Route exact path="/" component={LandingPage} />
-          <Route path="/login" component={LoginPage} />
-          <Route path="/register" component={RegisterPage} />
-          <Route path="/dashboard" component={Dashboard} />
+          <Route path="/login" component={isAuth(LoginPage)} />
+          <Route path="/register" component={isAuth(RegisterPage)} />
+          <Route path="/dashboard" component={isAuth(Dashboard)} />
           <Route component={notFound} />
         </Switch>
       </Router>
