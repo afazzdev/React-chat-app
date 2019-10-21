@@ -8,7 +8,7 @@ const AuthPage = OriginalComponent => {
     //WARNING! To be deprecated in React v17. Use componentDidMount instead.
     componentWillMount() {
       const { history, location } = this.props;
-      if (isMobileOnly) {
+      if (isMobileOnly && location.pathname !== "/register") {
         history.push("/");
         // window.location.reload();
         // window.scrollTo(
