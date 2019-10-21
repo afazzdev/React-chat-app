@@ -21,16 +21,13 @@ class LoginPage extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
-
+    const { phone, password } = this.state;
     const login = {
-      phone: this.state.phone,
-      password: this.state.password
+      phone: phone,
+      password: password
     };
     this.setState({ errors: {}, isLoading: true });
     console.log(login);
-    if (!e.target.value) {
-      this.setState({ empty: "cannot be empty" });
-    }
     Axios.post("https://rocky-sierra-75836.herokuapp.com/api/login", login)
       .then(res => {
         localStorage.setItem("token", res.data.access_token);
@@ -54,15 +51,23 @@ class LoginPage extends React.Component {
 
   onHide = e => {
     e.preventDefault();
-    if (this.state.type === "password") {
+    const { type } = this.state;
+
+    if (type === "password") {
       this.setState({ hidden: "fa-eye", type: "text" });
     } else {
       this.setState({ hidden: "fa-eye-slash", type: "password" });
     }
   };
 
+  handleKeyPress = e => {
+    if (e.charCode === 13) {
+      this.handleSubmit(e);
+    }
+  };
+
   render() {
-    const { isLoading } = this.state;
+    const { isLoading, errors, empty, hidden, type } = this.state;
 
     return (
       <>
@@ -81,21 +86,22 @@ class LoginPage extends React.Component {
               field="phone"
               className="input-text"
               onChange={this.onChange}
-              errors={this.state.errors}
-              empty={this.state.empty}
+              errors={errors}
+              empty={empty}
               placeholder="Type your phone here"
             />
             <TextField
               label="Password"
-              type={this.state.type}
+              type={type}
               field="password"
               className="input-text"
               onChange={this.onChange}
-              errors={this.state.errors}
-              empty={this.state.empty}
+              errors={errors}
+              empty={empty}
               placeholder="Type your password here"
               onHide={this.onHide}
-              hidden={this.state.hidden}
+              hidden={hidden}
+              onKeyPress={this.handleKeyPress}
             />
 
             <div className="input-group">

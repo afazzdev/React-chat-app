@@ -26,7 +26,7 @@ class RegisterPage extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  onSubmit = e => {
+  handleSubmit = e => {
     this.setState({ errors: {}, isLoading: true });
     e.preventDefault();
 
@@ -66,6 +66,12 @@ class RegisterPage extends Component {
     }
   };
 
+  handleKeyPress = e => {
+    if (e.charCode === 13) {
+      this.handleSubmit(e);
+    }
+  };
+
   render() {
     const { isLoading } = this.state;
 
@@ -74,7 +80,7 @@ class RegisterPage extends Component {
         {isLoading ? (
           <CreatingNewAccount />
         ) : (
-          <form onSubmit={this.onSubmit}>
+          <form onSubmit={this.handleSubmit}>
             <span className="auth-label">
               <h3>
                 <i className="fa fa-fingerprint"></i> Sign up
@@ -91,7 +97,7 @@ class RegisterPage extends Component {
               placeholder="Type your username here"
             />
             <TextField
-              label="Phone number"
+              label="Phone"
               type="text"
               field="phone"
               className="input-text"
@@ -111,6 +117,7 @@ class RegisterPage extends Component {
               placeholder="Type your password here"
               onHide={this.onHide}
               hidden={this.state.hidden}
+              onKeyPress={this.handleKeyPress}
             />
             <div className="input-group">
               <button

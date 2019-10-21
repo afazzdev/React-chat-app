@@ -14,7 +14,7 @@ class LandingPage extends React.Component {
           <div className="containerpage satu">
             <Page1 />
           </div>
-          <div className="containerpage dua">
+          <div className="containerpage dua" id="phone">
             <Page2 />
           </div>
           <div className="containerpage tiga">
