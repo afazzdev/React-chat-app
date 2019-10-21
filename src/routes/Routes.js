@@ -6,7 +6,7 @@ import LandingPage from "../containers/LandingPage";
 import RegisterPage from "../containers/AuthPage/RegisterPage";
 import LoginPage from "../containers/AuthPage/LoginPage";
 
-import isAuth from "../components/Auth/InputField/isAuth";
+import isAuth from "../components/Auth/isAuth";
 
 const Routes = () => {
   const notFound = () => {

@@ -4,8 +4,6 @@ import Axios from "axios";
 import { Link, withRouter } from "react-router-dom";
 import SigningIn from "../../containers/LandingPage/signingin";
 
-// import Auth from "./Auth";
-
 class LoginPage extends React.Component {
   constructor(props) {
     super(props);
