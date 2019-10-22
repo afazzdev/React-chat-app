@@ -27,7 +27,7 @@ class RegisterPage extends Component {
   };
 
   handleSubmit = e => {
-    this.setState({ errors: {}, isLoading: true });
+    this.setState({ errors: "", isLoading: true });
     e.preventDefault();
 
     const dataInput = {
@@ -37,7 +37,11 @@ class RegisterPage extends Component {
     };
 
     axios
-      .post("https://rocky-sierra-75836.herokuapp.com/api/register", dataInput)
+      .post(
+        // "https://rocky-sierra-75836.herokuapp.com/api/register"
+        "https://arcane-dawn-61247.herokuapp.com/api/register",
+        dataInput
+      )
       .then(res => {
         this.setState({
           username: "",
@@ -95,6 +99,8 @@ class RegisterPage extends Component {
               empty={this.state.empty}
               onChange={this.onChange}
               placeholder="Type your username here"
+              autoFocus={true}
+              value={this.state.username}
             />
             <TextField
               label="Phone"
@@ -105,6 +111,7 @@ class RegisterPage extends Component {
               empty={this.state.empty}
               onChange={this.onChange}
               placeholder="Type your phone here"
+              value={this.state.phone}
             />
             <TextField
               label="Password"
@@ -118,6 +125,7 @@ class RegisterPage extends Component {
               onHide={this.onHide}
               hidden={this.state.hidden}
               onKeyPress={this.handleKeyPress}
+              value={this.state.password}
             />
             <div className="input-group">
               <button

@@ -26,9 +26,13 @@ class LoginPage extends React.Component {
       phone: phone,
       password: password
     };
-    this.setState({ errors: {}, isLoading: true });
+    this.setState({ errors: "", isLoading: true });
     console.log(login);
-    Axios.post("https://rocky-sierra-75836.herokuapp.com/api/login", login)
+    Axios.post(
+      // "https://rocky-sierra-75836.herokuapp.com/api/login",
+      "https://arcane-dawn-61247.herokuapp.com/api/login",
+      login
+    )
       .then(res => {
         localStorage.setItem("token", res.data.access_token);
         this.setState({
@@ -40,7 +44,7 @@ class LoginPage extends React.Component {
         console.log(res);
       })
       .catch(err => {
-        this.setState({ isLoading: false });
+        this.setState({ isLoading: false, errors: err });
         console.log(err);
       });
   };
@@ -71,6 +75,7 @@ class LoginPage extends React.Component {
 
     return (
       <>
+        {" "}
         {isLoading ? (
           <SigningIn />
         ) : (
@@ -89,6 +94,8 @@ class LoginPage extends React.Component {
               errors={errors}
               empty={empty}
               placeholder="Type your phone here"
+              autoFocus={true}
+              value={this.state.phone}
             />
             <TextField
               label="Password"
@@ -102,6 +109,7 @@ class LoginPage extends React.Component {
               onHide={this.onHide}
               hidden={hidden}
               onKeyPress={this.handleKeyPress}
+              value={this.state.password}
             />
 
             <div className="input-group">
@@ -113,6 +121,7 @@ class LoginPage extends React.Component {
                 Login
               </button>
             </div>
+
             <span className="input-badge">
               <Link to="/register">Don't have an account?</Link>
             </span>

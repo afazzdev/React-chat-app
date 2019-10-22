@@ -2,10 +2,21 @@ import React from "react";
 
 class Page3 extends React.Component {
   state = {};
+  handleKeyPress = e => {
+    if (e.charCode === 13) {
+      this.handleClick(e);
+    }
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    console.log(e.target.value);
+  };
+
   render() {
     return (
       <>
-        <div className="input-group">
+        <form className="input-group" onSubmit={this.handleSubmit}>
           <h2 className="input-label">
             Have some idea to improve our application?
           </h2>
@@ -15,8 +26,14 @@ class Page3 extends React.Component {
             className="input-text"
             placeholder="Type your idea here"
           />
-          <button className="input-button">Submit your idea!</button>
-        </div>
+          <button
+            className="input-button"
+            type="submit"
+            onKeyPress={this.handleKeyPress}
+          >
+            Submit your idea!
+          </button>
+        </form>
       </>
     );
   }

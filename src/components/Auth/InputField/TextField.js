@@ -14,7 +14,9 @@ const TextField = ({
   placeholder,
   onHide,
   hidden,
-  onKeyPress
+  onKeyPress,
+  autoFocus,
+  value
 }) => {
   return (
     <div className="input-group">
@@ -28,8 +30,9 @@ const TextField = ({
           pattern={pattern}
           title={title}
           placeholder={placeholder}
-          autoFocus={label === "Username" || label === "Phone" ? true : false}
+          autoFocus={autoFocus}
           onKeyPress={onKeyPress}
+          value={value}
         />
         {onHide && (
           <button onClick={onHide} className="input-button hidden-button">
