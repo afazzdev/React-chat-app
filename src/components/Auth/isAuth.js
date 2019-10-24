@@ -8,12 +8,10 @@ const AuthPage = OriginalComponent => {
     //WARNING! To be deprecated in React v17. Use componentDidMount instead.
     componentWillMount() {
       const { history, location } = this.props;
-      if (isMobileOnly && location.pathname !== "/register") {
-        history.push("/");
-      } else if (
-        !localStorage.getItem("token") &&
-        location.pathname === "/login"
-      ) {
+      // if (isMobileOnly && location.pathname !== "/register") {
+      //   history.push("/");
+      // } else
+      if (!localStorage.getItem("token") && location.pathname === "/login") {
         localStorage.removeItem("reduxState");
       } else if (
         location.pathname === "/register" &&
