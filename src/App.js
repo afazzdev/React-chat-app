@@ -5,7 +5,7 @@ import { initiateContacts } from "./redux/actions/ContactsActions";
 import { initiateMessages } from "./redux/actions/MessagesActions";
 import configureStore from "./configureStore";
 
-import "./App.scss";
+import "./App.css";
 
 import contacts from "./samples/contacts";
 import messages from "./samples/messages";
