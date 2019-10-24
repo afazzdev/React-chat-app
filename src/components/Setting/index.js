@@ -54,7 +54,7 @@ class Setting extends React.Component {
         username: username,
         phone: phone,
         password: password,
-        photo: !avatar ? this.props.data.photo : avatar
+        photo: avatar.length === 0 ? this.props.data.photo : avatar
       };
       console.log(updatedData);
       this.props.update(updatedData);
@@ -63,6 +63,8 @@ class Setting extends React.Component {
       e.preventDefault();
       if (!editable) {
         this.setState({ editable: true, password: "" });
+      } else {
+        this.setState({ editable: false });
       }
     };
 
@@ -87,10 +89,10 @@ class Setting extends React.Component {
             <img
               src={photo}
               alt="Your face"
-              style={{ width: "150px", height: "150px" }}
+              style={{ width: "150px", height: "150px", borderRadius: "50%" }}
             />
             {editable && (
-              <div>
+              <div className="profile-group">
                 <input
                   className="profile-button"
                   type="file"
@@ -136,7 +138,7 @@ class Setting extends React.Component {
               name="password"
               onChange={handleChange}
               disabled={!editable}
-            />{" "}
+            />
             {editable && (
               <button
                 onClick={onHide}
@@ -147,9 +149,14 @@ class Setting extends React.Component {
             )}
           </div>
           {editable ? (
-            <button className="profile-button" type="submit">
-              save
-            </button>
+            <div>
+              <button className="profile-button" type="submit">
+                save
+              </button>{" "}
+              <button className="profile-button" onClick={handleEdit}>
+                cancel
+              </button>
+            </div>
           ) : (
             <button className="profile-button" onClick={handleEdit}>
               edit

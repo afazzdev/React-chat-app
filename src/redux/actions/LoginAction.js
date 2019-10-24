@@ -3,6 +3,7 @@ import { API } from "../../helpers/ApiHelper";
 
 export const login = data => {
   return function(dispatch) {
+    dispatch({ type: "IS_LOADING", payload: true });
     Axios.post(`${API}/login`, data)
       .then(res => {
         const token = res.data.access_token;
@@ -16,7 +17,7 @@ export const login = data => {
       .catch(err => {
         dispatch({
           type: "ERROR_LOGIN",
-          payload: err
+          payload: err.name
         });
         // console.log(err);
       });

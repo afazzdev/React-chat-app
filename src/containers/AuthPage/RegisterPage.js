@@ -11,7 +11,7 @@ class SignupPage extends React.Component {
         <div className="backgroundpage">
           <div className="container-slanted">
             <div className="autentication-form">
-              <div class="card" style={{ width: "18rem" }}>
+              <div className="card" style={{ width: "18rem" }}>
                 <RegisterPage />
               </div>
             </div>

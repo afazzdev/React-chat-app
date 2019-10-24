@@ -13,13 +13,9 @@ class LoginPage extends React.Component {
     this.state = {
       phone: "",
       password: "",
-      token: "",
-      errors: this.props.error,
-      isLoading: this.props.isLoading,
       empty: "",
       type: "password",
-      hidden: "fa-eye-slash",
-      redirect: this.props.redirect
+      hidden: "fa-eye-slash"
     };
   }
 
@@ -30,9 +26,8 @@ class LoginPage extends React.Component {
       phone: phone,
       password: password
     };
-    this.setState({ errors: "", isLoading: true });
-    // this.props.isLoading("IS_LOADING");
-    console.log(login);
+
+    // console.log(login);
     this.props.login(login);
   };
 
@@ -58,13 +53,13 @@ class LoginPage extends React.Component {
   };
 
   render() {
-    const { isLoading, errors, empty, hidden, type, redirect } = this.state;
-
+    const { empty, hidden, type } = this.state;
+    const { isLoading, errors } = this.props;
     return (
       <>
         {localStorage.getItem("token") ? (
           this.props.history.push("/dashboard")
-        ) : isLoading && !redirect && errors === "" ? (
+        ) : isLoading ? (
           <SigningIn />
         ) : (
           <form onSubmit={this.handleSubmit}>
@@ -109,7 +104,6 @@ class LoginPage extends React.Component {
                 Login
               </button>
             </div>
-
             <span className="input-badge">
               <Link to="/register">Don't have an account?</Link>
             </span>
@@ -120,13 +114,9 @@ class LoginPage extends React.Component {
   }
 }
 
-// const mapDispatchToProps = dispatch => {
-//   return { isLoading: () => dispatch({ type: "IS_LOADING" }) };
-// };
-
 const mapStateToProps = state => ({
   redirect: state.loginData.redirect,
-  error: state.loginData.errors,
+  errors: state.loginData.errors,
   isLoading: state.loginData.isLoading
 });
 

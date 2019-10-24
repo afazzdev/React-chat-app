@@ -6,15 +6,15 @@ const AuthPage = OriginalComponent => {
   class NewComp extends React.Component {
     state = {};
     //WARNING! To be deprecated in React v17. Use componentDidMount instead.
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
       const { history, location } = this.props;
       if (isMobileOnly && location.pathname !== "/register") {
         history.push("/");
-        // window.location.reload();
-        // window.scrollTo(
-        //   window.scrollX,
-        //   document.getElementById("#phone").scrollTop + 80
-        // );
+      } else if (
+        !localStorage.getItem("token") &&
+        location.pathname === "/login"
+      ) {
+        localStorage.removeItem("reduxState");
       } else if (
         location.pathname === "/register" &&
         !localStorage.getItem("token")

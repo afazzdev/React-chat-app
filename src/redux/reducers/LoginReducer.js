@@ -7,8 +7,8 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    // case "IS_LOADING":
-    //   return { ...state, errors: "", isLoading: true };
+    case "IS_LOADING":
+      return { ...state, isLoading: action.payload };
     case "LOGIN_ACCOUNT":
       console.log(state);
       return { ...state, data: action.payload, redirect: true };

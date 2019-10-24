@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import TextField from "./InputField/TextField";
 import axios from "axios";
 import { Link, withRouter } from "react-router-dom";
@@ -141,9 +140,5 @@ class RegisterPage extends Component {
     );
   }
 }
-
-RegisterPage.propTypes = {
-  userSignupRequest: PropTypes.func.isRequired
-};
 
 export default withRouter(RegisterPage);

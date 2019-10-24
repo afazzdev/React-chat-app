@@ -1,5 +1,4 @@
 import React from "react";
-// import { isEmpty } from "lodash";
 
 const TextField = ({
   label,
@@ -40,7 +39,7 @@ const TextField = ({
           </button>
         )}
       </div>
-      {errors && <span className="input-error">Error</span>}
+      {errors ? <span className="input-error">{errors}</span> : <></>}
       {empty && <span className="input-error">{empty}</span>}
     </div>
   );
