@@ -1,8 +1,11 @@
 import React from "react";
 import TextField from "./InputField/TextField";
-import Axios from "axios";
+
 import { Link, withRouter } from "react-router-dom";
 import SigningIn from "../../containers/LandingPage/signingin";
+
+import { connect } from "react-redux";
+import { login } from "../../redux/actions/LoginAction";
 
 class LoginPage extends React.Component {
   constructor(props) {
@@ -10,12 +13,13 @@ class LoginPage extends React.Component {
     this.state = {
       phone: "",
       password: "",
-      access_token: "",
-      errors: "",
-      isLoading: false,
+      token: "",
+      errors: this.props.error,
+      isLoading: this.props.isLoading,
       empty: "",
       type: "password",
-      hidden: "fa-eye-slash"
+      hidden: "fa-eye-slash",
+      redirect: this.props.redirect
     };
   }
 
@@ -27,26 +31,9 @@ class LoginPage extends React.Component {
       password: password
     };
     this.setState({ errors: "", isLoading: true });
+    // this.props.isLoading("IS_LOADING");
     console.log(login);
-    Axios.post(
-      // "https://rocky-sierra-75836.herokuapp.com/api/login",
-      "https://arcane-dawn-61247.herokuapp.com/api/login",
-      login
-    )
-      .then(res => {
-        localStorage.setItem("token", res.data.access_token);
-        this.setState({
-          access_token: res.data.access_token,
-          redirect: true,
-          isLoading: false
-        });
-        this.props.history.push("/dashboard");
-        console.log(res);
-      })
-      .catch(err => {
-        this.setState({ isLoading: false, errors: err });
-        console.log(err);
-      });
+    this.props.login(login);
   };
 
   onChange = e => {
@@ -71,12 +58,13 @@ class LoginPage extends React.Component {
   };
 
   render() {
-    const { isLoading, errors, empty, hidden, type } = this.state;
+    const { isLoading, errors, empty, hidden, type, redirect } = this.state;
 
     return (
       <>
-        {" "}
-        {isLoading ? (
+        {localStorage.getItem("token") ? (
+          this.props.history.push("/dashboard")
+        ) : isLoading && !redirect && errors === "" ? (
           <SigningIn />
         ) : (
           <form onSubmit={this.handleSubmit}>
@@ -132,4 +120,19 @@ class LoginPage extends React.Component {
   }
 }
 
-export default withRouter(LoginPage);
+// const mapDispatchToProps = dispatch => {
+//   return { isLoading: () => dispatch({ type: "IS_LOADING" }) };
+// };
+
+const mapStateToProps = state => ({
+  redirect: state.loginData.redirect,
+  error: state.loginData.errors,
+  isLoading: state.loginData.isLoading
+});
+
+export default withRouter(
+  connect(
+    mapStateToProps,
+    { login }
+  )(LoginPage)
+);

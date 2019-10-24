@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-// import { isEmpty } from "lodash";
 import TextField from "./InputField/TextField";
 import axios from "axios";
 import { Link, withRouter } from "react-router-dom";
 import CreatingNewAccount from "../../containers/LandingPage/creatingNewAccount";
+import { API } from "../../helpers/ApiHelper";
 
 class RegisterPage extends Component {
   constructor(props) {
@@ -37,11 +37,7 @@ class RegisterPage extends Component {
     };
 
     axios
-      .post(
-        // "https://rocky-sierra-75836.herokuapp.com/api/register"
-        "https://arcane-dawn-61247.herokuapp.com/api/register",
-        dataInput
-      )
+      .post(`${API}/register`, dataInput)
       .then(res => {
         this.setState({
           username: "",

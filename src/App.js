@@ -16,6 +16,10 @@ const store = configureStore();
 store.dispatch(initiateContacts(contacts));
 store.dispatch(initiateMessages(messages));
 
+store.subscribe(() => {
+  localStorage.setItem("reduxState", JSON.stringify(store.getState()));
+});
+
 function App() {
   return (
     <Provider store={store}>

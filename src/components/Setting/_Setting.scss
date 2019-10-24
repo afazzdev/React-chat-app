@@ -1,0 +1,54 @@
+.profile-group {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .profile-label {
+    color: #ebebeb;
+  }
+  .profile-text {
+    background: transparent;
+    outline: none;
+    border: none;
+    height: 2rem;
+    border-radius: 4px;
+    padding: 0 4px;
+    color: #ebebeb;
+    transition: background ease 0.2s;
+    margin: 5px;
+    border-bottom: 2px solid #ebebeb;
+    &:focus,
+    &:hover {
+      background: #ebebeb;
+      color: #2f3760;
+    }
+  }
+
+  .profile-button {
+    background: #2f3760;
+    color: #ebebeb;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 5px;
+    transition: background ease-in-out 0.2s;
+    outline: none;
+    &[type="file"] {
+      display: none;
+    }
+    &:hover {
+      background: #ebebeb;
+      color: #2f3760;
+      cursor: pointer;
+    }
+  }
+  .profile-error {
+    color: red;
+  }
+  .hidden-button {
+    position: absolute;
+    transform: translate(300%, 0px);
+    height: 2rem;
+    border-radius: 5px;
+  }
+}
