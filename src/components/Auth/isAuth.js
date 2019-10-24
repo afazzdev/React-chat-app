@@ -6,7 +6,7 @@ const AuthPage = OriginalComponent => {
   class NewComp extends React.Component {
     state = {};
     //WARNING! To be deprecated in React v17. Use componentDidMount instead.
-    UNSAFE_componentWillMount() {
+    componentWillMount() {
       const { history, location } = this.props;
       if (isMobileOnly && location.pathname !== "/register") {
         history.push("/");
